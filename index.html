@@ -1,0 +1,113 @@
+<!-- 
+Author: Kenneth Gerrits
+Github: github.com/kennethgerrits
+Version: 1.0
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0" />
+  <meta name="author" content="Kenneth Gerrits">
+  <meta name="description" content="Personalized Dashboard">
+  <title>Your Personal Dashboard</title>
+
+  <!-- CSS  -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/v4-shims.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap"
+    rel="stylesheet">
+  <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection" />
+  <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection" />
+
+  <!-- Favicon -->
+  <link rel="shortcut icon" href="assets/icons/favicon.png">
+
+  <!-- Scripts-->
+  <script defer src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script defer src="js/materialize.js"></script>
+  <script defer src="js/init.js"></script>
+  <script defer src="js/backgroundHandler.js"></script>
+  <script defer src="js/weatherController.js"></script>
+</head>
+
+<body class="black lighten-4">
+  <img id="background" src="" alt="personal-background">
+
+  <!--Settings -->
+  <div class="row top">
+    <!-- Settings icon (Top right)-->
+    <div class="col s12 m2 push-m10 icons">
+      <i class="settings small material-icons modal-trigger white-text" data-target="modal1">settings</i>
+    </div>
+
+    <!-- Modal Structure -->
+    <div id="modal1" class="modal">
+      <div class="modal-content">
+        <h5>Settings</h5>
+        <img src="" id="tableBanner" />
+        <div class="row">
+
+          <!-- Handle background upload process -->
+          <div class="col s6 setting">Upload background:</div>
+
+          <div class="col s6">
+            <form action="#">
+              <div class="file-field input-field">
+                <div class="btn upload">
+                  <span>Upload</span>
+                  <input type='file' id='imageInput' name="background-image" onchange="handleBackgroundSubmission();">
+                </div>
+                <div class="file-path-wrapper">
+                  <input class="file-path validate" type="text">
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Google search bar  -->
+    <div class="col s12 m6 push-m1 pull-m2">
+      <form class="col s12 " method="get" action="https://www.google.com/search">
+        <div class="row">
+          <div class="google input-field col s12 white">
+            <i class="fab fa-google"></i>
+            <input class="center" id="searchbarInput" type="text" name="q" size="25" maxlength=""
+              placeholder="Search the web" />
+            <button type="submit">
+              <i class="arrow fas fa-arrow-right"></i>
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Weather forecast -->
+  <div class="row weatherBlock">
+    <div class="center">
+      
+      <div class="flex-container">
+        <i class="fa fa-map-marker pr-1" aria-hidden="true"></i>
+        <div id="location"></div>
+      </div>
+
+      <div id="weatherIcon"></div>
+      <div id="temp"></div>
+      <div id="weatherDescription" class="ptb-1"></div>
+      <div id="feels_like"></div>
+      <div id="humidity"></div>
+      <div id="wind"></div>
+      <i id="windArrow" class="fas fa-location-arrow ml-1"></i>
+    </div>
+  </div>
+
+</body>
+
+</html>
