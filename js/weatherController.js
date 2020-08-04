@@ -19,6 +19,6 @@
                 $('#humidity').html('Humidity: ' + weather.main.humidity + '%');
                 $('#wind').html('Wind: ' + weather.wind.speed + 'km/h');
                 $('#windArrow').css('transform', 'rotate(' + weather.wind.deg + 'deg)');
-            })
-        })
+            });
+        });
     }

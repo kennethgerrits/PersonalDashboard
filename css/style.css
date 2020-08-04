@@ -76,7 +76,7 @@ body {
   padding-bottom: 1%;
 }
 
-.ml-1{
+.ml-1 {
   margin-left: 1%;
 }
 
@@ -202,10 +202,6 @@ body {
   background-color: rgba(248, 248, 255, 0.9);
   width: 48%;
   border-radius: 25px;
-}
-
-.rotate {
-  transform: rotate(90deg);
 }
 
 @media only screen and (max-width: 600px) {
